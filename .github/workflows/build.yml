@@ -1,0 +1,19 @@
+name: Github Action
+
+on:
+  push:
+    branches:
+      -master
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@3
+
+      - name: commit
+        run: echo ${{github.sha}}
