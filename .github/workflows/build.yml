@@ -23,4 +23,4 @@ jobs:
       - shell: bash
         run: echo ${{github.sha}} > tag.txt
       - run: cat tag.txt
-      - run: {{ env.REGISTRY }}
+      - run: echo ${{ env.REGISTRY }}
