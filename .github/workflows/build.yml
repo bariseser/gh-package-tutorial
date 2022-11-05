@@ -20,5 +20,5 @@ jobs:
 
       - shell: bash
         run: |
-          echo ${{github.sha}}
+          echo ${{github.sha}} > tag.txt
       - run: cat tag.txt
