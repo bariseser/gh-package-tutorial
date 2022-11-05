@@ -35,7 +35,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,enable=true,value=${{ env.COMMIT_ID }}
+            type=raw,enable=true,value=$(git rev-parse --short ${{ github.sha }})
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
