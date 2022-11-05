@@ -17,3 +17,13 @@ jobs:
 
       - name: commit
         run: echo ${{github.sha::6}}
+
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+
+      - name: "Upload output file"
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
