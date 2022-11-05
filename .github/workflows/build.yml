@@ -16,7 +16,7 @@ jobs:
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
-      COMMIT_ID: $(git rev-parse --short ${{ github.sha }})
+      COMMIT_ID: ${{ github.sha }}
     steps:
       - name: checkout
         uses: actions/checkout@v3
