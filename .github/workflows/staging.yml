@@ -16,7 +16,7 @@ jobs:
     env:
       REGISTRY: ghcr.io
       IMAGE_NAME: ${{ github.repository }}
-      SHA: ${{github.sha}}
+      SHA: stage-${{github.sha}}
     steps:
       - name: checkout
         uses: actions/checkout@v3
